@@ -10,3 +10,12 @@ while True:
     if more.lower() != 'yes':
         break
 
+with open("mood_log.txt", "a") as file:
+    for mood in moods:
+        file.write(mood + "\n")
+
+with open("mood_log.txt", "r") as file:
+    content=file.read()
+    print("Your mood log:")
+    for line in content.splitlines():
+        print(f"- {line}")
