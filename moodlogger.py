@@ -1,3 +1,4 @@
+import datetime 
 moods = []
 
 while True:
@@ -12,7 +13,7 @@ while True:
 
 with open("mood_log.txt", "a") as file:
     for mood in moods:
-        file.write(mood + "\n")
+        file.write(f"{datetime.datetime.now()}: I am feeling {mood}\n")
 
 with open("mood_log.txt", "r") as file:
     content=file.read()
